@@ -1,0 +1,353 @@
+{% extends 'base.html' %} {% block head %}
+<title>DSM Salary</title>
+{% endblock %} {% block body %}
+<div class="w-full min-h-screen py-20 px-4 bg-gray-300">
+  <!-- <h1 class="font-bold text-3xl text-center underline">Template Test</h1> -->
+
+  <form action="/dsm-salary/result" method="POST" class="w-full">
+    <div class="w-full lg:max-w-[80%] mx-auto p-5 lg:p-10 bg-white">
+      <div class="w-full">
+        <h1 class="font-bold text-3xl text-center mb-20">
+          Decision Support Model to Determine Employee's Salary
+        </h1>
+      </div>
+      <div class="w-full flex flex-wrap">
+        <div class="w-full md:w-1/2 mb-4 md:px-4">
+          <h2 class="subtitle mb-2">Personal Information</h2>
+          <div class="w-full h-[1px] bg-gray-400 mb-4"></div>
+
+          <div class="w-full flex flex-wrap -mx-4">
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">Umur</h5>
+              <input
+                type="number"
+                name="umur"
+                placeholder="Input Umur"
+                min="0"
+                max="60"
+                class="input-text" />
+            </div>
+
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">Status Pernikahan</h5>
+              <input
+                type="radio"
+                id="belum_menikah"
+                name="status_pernikahan"
+                value="0" />
+              <label for="belum_menikah">Belum Menikah</label><br />
+              <input
+                type="radio"
+                id="sudah_menikah"
+                name="status_pernikahan"
+                value="1" />
+              <label for="sudah_menikah">Sudah Menikah</label><br />
+            </div>
+
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">Jumlah Tanggungan</h5>
+              <input
+                type="number"
+                name="jumlah_tanggungan"
+                placeholder="Input Jumlah Tanggungan"
+                min="0"
+                max="60"
+                class="input-text" />
+            </div>
+
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">Jarak dari Rumah ke Kantor</h5>
+              <input
+                type="number"
+                name="jarak_rumah"
+                placeholder="Input Jarak Rumah ke Kantor"
+                min="0"
+                max="60"
+                class="input-text" />
+            </div>
+
+            <div class="w-full px-4 mb-4">
+              <h5 class="question-title mb-2">Pendidikan Terakhir</h5>
+              <input
+                type="radio"
+                id="sd"
+                name="pendidikan_terakhir"
+                value="1" />
+              <label for="sd">Sekolah Dasar (SD)</label><br />
+              <input
+                type="radio"
+                id="smp"
+                name="pendidikan_terakhir"
+                value="2" />
+              <label for="smp">Sekolah Menengah Pertama (SMP)</label><br />
+              <input
+                type="radio"
+                id="sma"
+                name="pendidikan_terakhir"
+                value="3" />
+              <label for="sma"
+                >Sekolah Menengah Atas (SMA) / Sekolah Menengah Kejuruan
+                (SMK)</label
+              ><br />
+              <input
+                type="radio"
+                id="d3"
+                name="pendidikan_terakhir"
+                value="4" />
+              <label for="d3">Diploma 3 (D3)</label><br />
+              <input
+                type="radio"
+                id="s1"
+                name="pendidikan_terakhir"
+                value="5" />
+              <label for="s1">Sarjana (S1)</label><br />
+              <input
+                type="radio"
+                id="s2"
+                name="pendidikan_terakhir"
+                value="6" />
+              <label for="s2">Magister (S2)</label><br />
+              <input
+                type="radio"
+                id="s3"
+                name="pendidikan_terakhir"
+                value="7" />
+              <label for="s3">Doktor (S3)</label><br />
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:px-4">
+          <h2 class="subtitle mb-2">SKILLS</h2>
+          <div class="w-full h-[1px] bg-gray-400 mb-4"></div>
+
+          <div class="w-full flex flex-wrap -mx-4">
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">
+                Tingkat Pengetahuan Pekerjaan (max: 10)
+              </h5>
+              <input
+                type="text"
+                name="pengetahuan"
+                placeholder="Input Tingkat Pengetahuan Pekerjaan"
+                min="0"
+                max="10"
+                class="input-text" />
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">
+                Tingkat Kemampuan Bekerja (max: 10)
+              </h5>
+              <input
+                type="text"
+                name="kemampuan"
+                placeholder="Input Tingkat Kemampuan Bekerja"
+                min="0"
+                max="10"
+                class="input-text" />
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">
+                Kecepatan Bekerja (dalam menit)
+              </h5>
+              <input
+                type="number"
+                name="kecepatan"
+                placeholder="Input Tingkat Kemampuan Bekerja"
+                min="0"
+                max="200"
+                class="input-text" />
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">Kualitas Pekerjaan (max: 10)</h5>
+              <input
+                type="text"
+                name="kualitas"
+                placeholder="Input Kualitas Pekerjaan"
+                min="0"
+                max="10"
+                class="input-text" />
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">
+                Jumlah Pekerjaan yang dapat dikerjakan (max: 10)
+              </h5>
+              <input
+                type="text"
+                name="jumlah"
+                placeholder="Input Jumlah Pekerjaan"
+                min="0"
+                max="40"
+                class="input-text" />
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:px-4">
+          <h2 class="subtitle mb-2">ATTITUDE</h2>
+          <div class="w-full h-[1px] bg-gray-400 mb-4"></div>
+
+          <div class="w-full flex flex-wrap -mx-4">
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">Poin Perilaku (max: 10)</h5>
+              <input
+                type="text"
+                name="perilaku"
+                placeholder="Input Poin Perilaku"
+                min="0"
+                max="10"
+                class="input-text" />
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">Poin Disiplin (max: 10)</h5>
+              <input
+                type="text"
+                name="disiplin"
+                placeholder="Input Poin Disiplin"
+                min="0"
+                max="10"
+                class="input-text" />
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">Poin Kejujuran (max: 10)</h5>
+              <input
+                type="text"
+                name="kejujuran"
+                placeholder="Input Poin Kejujuran"
+                min="0"
+                max="10"
+                class="input-text" />
+            </div>
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">
+                Poin Tingkat Tanggung Jawab (max: 10)
+              </h5>
+              <input
+                type="text"
+                name="tanggung_jawab"
+                placeholder="Input Poin Tingkat Tanggung Jawab"
+                min="0"
+                max="10"
+                class="input-text" />
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 md:px-4">
+          <h2 class="subtitle mb-2">ACHIEVEMENT</h2>
+          <div class="w-full h-[1px] bg-gray-400 mb-4"></div>
+
+          <div class="w-full flex flex-wrap -mx-4">
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">
+                Jumlah Sertifikat / Penghargaan / Pencapaian yang dimiliki
+              </h5>
+              <input
+                type="number"
+                name="pencapaian"
+                placeholder="Input Jumlah Sertifikat / Penghargaan / Pencapaian"
+                min="0"
+                max="10"
+                class="input-text" />
+            </div>
+
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">
+                Jumlah Tahun Pengalaman Bekerja
+              </h5>
+              <input
+                type="text"
+                name="pengalaman_bekerja"
+                placeholder="Input Jumlah Tahun Pengalaman Bekerja"
+                min="0"
+                max="100"
+                class="input-text" />
+            </div>
+
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">Jumlah Gaji saat ini</h5>
+              <input
+                type="number"
+                name="gaji"
+                placeholder="Input Jumlah Gaji saat ini"
+                min="0"
+                class="input-text" />
+            </div>
+
+            <!-- <div class="w-full md:w-1/2 px-4 mb-4">
+            <h5 class="question-title mb-2">Pekerjaan Saat Ini</h5>
+            <input
+              type="text"
+              name="pekerjaan"
+              placeholder="Input Pekerjaan saat ini"
+              class="input-text"
+            />
+          </div> -->
+
+            <div class="w-full md:w-1/2 px-4 mb-4">
+              <h5 class="question-title mb-2">Level Pekerjaan Saat Ini</h5>
+              <input
+                type="radio"
+                id="mahasiswa"
+                name="level_pekerjaan"
+                value="1" />
+              <label for="mahasiswa">Mahasiswa</label><br />
+              <input
+                type="radio"
+                id="junior"
+                name="level_pekerjaan"
+                value="2" />
+              <label for="junior">Junior Level</label><br />
+              <input
+                type="radio"
+                id="middle"
+                name="level_pekerjaan"
+                value="3" />
+              <label for="middle">Middle Level</label><br />
+              <input
+                type="radio"
+                id="senior"
+                name="level_pekerjaan"
+                value="4" />
+              <label for="senior">Senior Level</label><br />
+              <input
+                type="radio"
+                id="managerial"
+                name="level_pekerjaan"
+                value="5" />
+              <label for="managerial">Managerial</label><br />
+              <!-- <input type="radio" id="pimpinan" name="level_pekerjaan" value="6" />
+            <label for="pimpinan">Pimpinan</label><br /> -->
+            </div>
+
+            <!-- <div class="w-full md:w-1/2 px-4 mb-4">
+            <h5 class="question-title mb-2">Gaji Saat Ini</h5>
+            <input type="radio" id="gaji_1" name="gaji_sekarang" value="25" />
+            <label for="gaji_1">Rp 0 - Rp 5.000.000</label><br />
+            <input type="radio" id="gaji_2" name="gaji_sekarang" value="75" />
+            <label for="gaji_2">Rp 5.000.001 - Rp 10.000.000</label><br />
+            <input type="radio" id="gaji_3" name="gaji_sekarang" value="125" />
+            <label for="gaji_3">Rp 10.000.001 - Rp 15.000.000</label><br />
+            <input type="radio" id="gaji_4" name="gaji_sekarang" value="175" />
+            <label for="gaji_4">Rp 15.000.001 - Rp 20.000.000</label><br />
+            <input type="radio" id="gaji_5" name="gaji_sekarang" value="225" />
+            <label for="gaji_5">> Rp 20.000.001</label><br />
+          </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="w-fit ml-auto pt-10">
+        <button
+          type="submit"
+          class="w-fit px-4 py-2 bg-[#0097E1] font-bold text-base text-white rounded-md transition-all duration-300 hover:bg-[#0089CC]">
+          ADD DATA
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="w-full lg:max-w-[80%] mx-auto px-5 py-2 bg-gray-100">
+    <p class="font-normal text-base text-center text-black">
+      © 2023 Copyright:
+      <b>Gregoryus Imannuel Perdana, Bina Nusantara University</b>
+    </p>
+  </div>
+</div>
+{% endblock %}

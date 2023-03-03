@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block head %}
+<title>Thesis Dashboard</title>
+{% endblock %} {% block body %}
+
+<div class="w-full min-h-screen py-20 bg-gray-300">
+  <div class="w-full lg:max-w-[80%] mx-auto p-5 lg:p-10 bg-white">
+    <h4 class="font-bold text-2xl text-black">
+      Anggota baik diposisikan sebagai
+      <span style="color: #1261bc">{{ labels }}</span>
+    </h4>
+    <div class="my-4 mx-5 center">
+      <p>System analyst: {{ system_analyst }}</p>
+      <p>Software designer: {{ software_designer }}</p>
+      <p>Software developer: {{ software_developer }}</p>
+      <p>Software tester: {{ software_tester }}</p>
+      <p>Software Maintainer: {{ software_maintainer }}</p>
+    </div>
+
+    <div class="w-fit ml-auto pt-10 px-4">
+      <a
+        href="/dsm-team"
+        class="w-fit px-4 py-2 bg-[#0097E1] font-bold text-base text-white rounded-md transition-all duration-300 hover:bg-[#0089CC]"
+        >BACK</a
+      >
+    </div>
+  </div>
+  <div class="w-full lg:max-w-[80%] mx-auto px-5 py-2 bg-gray-100">
+    <p class="font-normal text-base text-center text-black">
+      © 2023 Copyright:
+      <b>Rizky Martin, Bina Nusantara University</b>
+    </p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base.html' %} {% block head %}
+<title>Thesis Dashboard</title>
+{% endblock %} {% block body %}
+
+<div class="w-full min-h-screen py-20 bg-gray-300">
+  <div class="w-full lg:max-w-[80%] mx-auto p-5 lg:p-10 bg-white">
+    <div class="w-full flex flex-wrap">
+      <!-- {% if pi %} -->
+      <div class="w-1/2 px-4 mb-4">
+        <p>Umur: {{ pi.umur }} tahun</p>
+        <p>Pendidikan Terakhir: {{ pi.pendidikan_terakhir }}</p>
+        <p>Status Pernikahan: {{ pi.status_pernikahan }}</p>
+        <p>Jumlah Tanggungan: {{ pi.jumlah_tanggungan }}</p>
+        <p>Jarak dari Rumah ke Kantor: {{ pi.jarak_rumah }} KM</p>
+        <h2 class="subtitle mb-2">
+          Personal Information : {{ pi.total_personal_information }}
+        </h2>
+        <!-- <p>FUZZY PI: {{ pi.total_personal_information }}</p> -->
+      </div>
+      <!-- {% endif %} -->
+
+      <!-- {% if pi %} -->
+      <div class="w-1/2 px-4 mb-4">
+        <p>Tingkat Pengetahuan: {{ sk.pengetahuan }}</p>
+        <p>Tingkat Kemampuan: {{ sk.kemampuan }}</p>
+        <p>Kecepatan Bekerja: {{ sk.kecepatan }}</p>
+        <p>Kualitas Pekerjaan: {{ sk.kualitas }}</p>
+        <p>Jumlah Pekerjaan: {{ sk.jumlah }}</p>
+        <h2 class="subtitle mb-2">Skills : {{ sk.total_skills }}</h2>
+        <!-- <p>FUZZY PI: {{ pi.total_personal_information }}</p> -->
+      </div>
+      <!-- {% endif %} -->
+
+      <!-- {% if pi %} -->
+      <div class="w-1/2 px-4 mb-4">
+        <p>Poin Perilaku: {{ at.perilaku }}</p>
+        <p>Poin Disiplin: {{ at.disiplin }}</p>
+        <p>Poin Kejujuran: {{ at.kejujuran }}</p>
+        <p>Poin Tingkat Tanggung Jawab: {{ at.tanggung_jawab }}</p>
+        <h2 class="subtitle mb-2">Attitude : {{ at.total_attitude }}</h2>
+        <!-- <p>FUZZY PI: {{ pi.total_personal_information }}</p> -->
+      </div>
+      <!-- {% endif %} -->
+
+      <!-- {% if pi %} -->
+      <div class="w-1/2 px-4 mb-4">
+        <p>Jumlah Sertifikat / Penghargaan / Pencapaian: {{ ac.pencapaian }}</p>
+        <p>Pengalaman Bekerja: {{ ac.pengalaman_bekerja }} tahun</p>
+        <p>Gaji saat ini: <sup>Rp</sup> {{ ac.gaji }}</p>
+        <p>Level Pekerjaan saat ini: {{ ac.level_pekerjaan }}</p>
+        <h2 class="subtitle mb-2">Achievement : {{ ac.total_achievement }}</h2>
+        <!-- <p>FUZZY PI: {{ pi.total_personal_information }}</p> -->
+      </div>
+      <!-- {% endif %} -->
+
+      <!-- {% if pi %} -->
+      <div class="w-full px-4 mb-4">
+        <h2 class="final-salary mb-2">
+          Rekomendasi Gaji : <sup>Rp</sup> {{ final_salary }}
+        </h2>
+        <!-- <p>FUZZY PI: {{ pi.total_personal_information }}</p> -->
+      </div>
+
+      <div class="w-fit ml-auto pt-10 px-4">
+        <a
+          href="/dsm-salary"
+          class="w-fit px-4 py-2 bg-[#0097E1] font-bold text-base text-white rounded-md transition-all duration-300 hover:bg-[#0089CC]"
+          >BACK</a
+        >
+      </div>
+      <!-- {% endif %} -->
+    </div>
+  </div>
+  <div class="w-full lg:max-w-[80%] mx-auto px-5 py-2 bg-gray-100">
+    <p class="font-normal text-base text-center text-black">
+      © 2023 Copyright:
+      <b>Gregoryus Imannuel Perdana, Bina Nusantara University</b>
+    </p>
+  </div>
+</div>
+{% endblock %}

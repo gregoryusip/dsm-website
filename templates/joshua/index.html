@@ -1,0 +1,200 @@
+{% extends 'base.html' %} {% block head %}
+<title>DSM Green City</title>
+{% endblock %} {% block body %}
+<div class="w-full py-20 px-4 bg-gray-300">
+  <form action="" method="POST" class="w-full">
+    <div class="w-full lg:max-w-[80%] mx-auto p-5 lg:p-10 bg-white">
+      <div class="w-full">
+        <h1 class="font-bold text-3xl text-center mb-20">
+          Dashboard Green City Prediction
+        </h1>
+      </div>
+      <div class="w-full flex flex-wrap">
+        <div class="w-full md:w-1/2 mb-4 md:px-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-header mb-2">Electricity</div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label"
+                  >Electricity Consumption (GWh)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="electricity" />
+              </div>
+
+              <div class="card-header mb-2">Water</div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label"
+                  >Water Consumption (m3)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="water" />
+              </div>
+
+              <div class="card-header mb-2">Air</div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label"
+                  >Air Quality (ISPU)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="air" />
+              </div>
+
+              <div class="card-header mb-2">Building Land</div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label"
+                  >Region (km2)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="region" />
+              </div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label">%RTH</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="rth" />
+              </div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label">Population</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="population" />
+              </div>
+
+              <div class="card-header mb-2">Transportation</div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label">Motorcycle</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="motorcycle" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 mb-4 md:px-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label">Car</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="car" />
+              </div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label">Bus</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="bus" />
+              </div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label">Truck</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="truck" />
+              </div>
+
+              <div class="card-header mb-2">Waste</div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label"
+                  >Generate Waste (ton)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="generate" />
+              </div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label"
+                  >Reduce Waste (ton)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="reduce" />
+              </div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label"
+                  >Handle Waste (ton)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="handle" />
+              </div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label"
+                  >Recycle Waste (ton)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="recycle" />
+              </div>
+              <div class="col mb-2">
+                <label for="inputExample" class="form-label"
+                  >Raw Waste (ton)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputExample"
+                  name="raw" />
+              </div>
+            </div>
+          </div>
+
+          {% if final_result %}
+          <div class="w-full mt-4">
+            <h3 class="font-bold text-base text-black">Prediction Result :</h3>
+            <h3 class="font-bold text-xl text-black">{{final_result}}</h3>
+          </div>
+          {% endif %}
+
+          <div class="w-fit ml-auto pt-20">
+            <button
+              type="submit"
+              class="w-fit px-4 py-2 bg-[#0097E1] font-bold text-base text-white rounded-md transition-all duration-300 hover:bg-[#0089CC]">
+              SUBMIT
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="w-full lg:max-w-[80%] mx-auto px-5 py-2 bg-gray-100">
+    <p class="font-normal text-base text-center text-black">
+      © 2023 Copyright:
+      <b>Joshua La'la, Bina Nusantara University</b>
+    </p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,260 @@
+{% extends 'base.html' %} {% block head %}
+<title>DSM Software Project Team Recruitment</title>
+{% endblock %} {% block body %}
+<div class="w-full py-20 px-4 bg-gray-300">
+  <!-- <h1 class="font-bold text-3xl text-center underline">Template Test</h1> -->
+
+  <form action="/dsm-team/result" method="POST" enctype="multipart/form-data">
+    <div class="w-full lg:max-w-[80%] mx-auto p-5 lg:p-10 bg-white">
+      <div class="w-full">
+        <h1 class="font-bold text-3xl text-center mb-10 lg:mb-20">
+          Decision Support Model for Software Project Team Recruitment Based on
+          Personality Type and Soft Skill
+        </h1>
+      </div>
+      <div class="w-full flex flex-wrap">
+        <div class="w-full md:w-1/2 px-4">
+          <div class="Soft-skills">
+            <h3 class="font-bold text-2xl text-black mb-4">
+              Soft skills value
+            </h3>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Communication skills</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="communication" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Interpersonal skills</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="interpersonal" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Ability to work independently</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="independently" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Active Listener</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="listener" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">
+                Strong analytical & problem-solving skills</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="analytical" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Open & adaptable to changes</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="changes" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Innovative</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="innovative" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Organization skills</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="organization" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Pay thorough & acute attention to details</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="attention" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Fast learner</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="learner" />
+            </div>
+            <div class="">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Team player</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="team" />
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/2 px-4">
+          <div class="Personality">
+            <h3 class="font-bold text-2xl text-black mb-4">
+              Personality value
+            </h3>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Openness to experience</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="ote" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Conscientiousness</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="conscientiousness" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Extraversion</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="extraversion" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Agreeableness</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="agreeableness" />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Neuroticism</label
+              >
+              <input
+                type="number"
+                step="any"
+                class="input-text"
+                id="exampleFormControlInput1"
+                min="0"
+                max="1"
+                name="neuroticism" />
+            </div>
+            <div class="">
+              <button
+                type="submit"
+                class="w-fit px-4 py-2 bg-[#0097E1] font-bold text-base text-white rounded-md transition-all duration-300 hover:bg-[#0089CC]">
+                Prediksi Peran
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="w-full lg:max-w-[80%] mx-auto px-5 py-2 bg-gray-100">
+    <p class="font-normal text-base text-center text-black">
+      © 2023 Copyright:
+      <b>Rizky Martin, Bina Nusantara University</b>
+    </p>
+  </div>
+</div>
+
+<!-- <script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+  crossorigin="anonymous"></script> -->
+{% endblock %}
